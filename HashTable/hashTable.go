@@ -31,7 +31,7 @@ func (h *HashTable) Insert(k string) {
 		h.hIndex = 0
 	}
 	if h.hIndex < index {
-		for i := h.hIndex; i <= index; i++ {
+		for i := h.hIndex + 1; i <= index; i++ {
 			h.table = append(h.table, &BucketList{})
 		}
 		h.hIndex = index
