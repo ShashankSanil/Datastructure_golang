@@ -2,10 +2,9 @@ package HashTable
 
 import "fmt"
 
-const TableSize int = 10
-
 type HashTable struct {
-	table [TableSize]*BucketList
+	table  []*BucketList
+	hIndex int
 }
 
 type BucketList struct {
@@ -22,11 +21,21 @@ func Hash(w string) int {
 	for _, ch := range w {
 		sum += int(ch)
 	}
-	return sum % TableSize
+	return sum % len(w)
 }
 
 func (h *HashTable) Insert(k string) {
 	index := Hash(k)
+	if len(h.table) == 0 {
+		h.table = append(h.table, &BucketList{})
+		h.hIndex = 0
+	}
+	if h.hIndex < index {
+		for i := h.hIndex; i <= index; i++ {
+			h.table = append(h.table, &BucketList{})
+		}
+		h.hIndex = index
+	}
 	h.table[index].Insert(k)
 }
 
