@@ -1,18 +1,3 @@
-//												   [Root]               
-//													 *
-//												   *   *
-//												 *       *
-//											   *           *
-//											 *               *
-//										 [Left]             [Right]        --->Parent
-//										   *                   *
-//										 *   *               *   *
-//									   *       *           *       *
-//									 *           *       *           *
-//								  [Left]      [Right]  [Left]      [Right] --->Leaves
-
-// Time Complexity O(log n) where n is index
-// Time Complexity O(n) where n is level of tree (height)
 package Heap
 
 import "fmt"

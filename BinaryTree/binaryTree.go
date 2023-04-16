@@ -1,16 +1,3 @@
-//												   [Root]               
-//													 *
-//												   *   *
-//												 *       *
-//											   *           *
-//											 *               *
-//										 [Left]             [Right]        --->Parent
-//										   *                   *
-//										 *   *               *   *
-//									   *       *           *       *
-//									 *           *       *           *
-//								  [Left]      [Right]  [Left]      [Right] --->Leaves
-
 package BinaryTree
 
 import "fmt"
